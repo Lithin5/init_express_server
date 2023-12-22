@@ -4,11 +4,13 @@ let config = {};
 
 if(environment === "dev"){
     config = {
-        port: '4800'
+        port: '4800',
+        JWT_SECRET: "12366532312312",
     }
 }else if(environment === "prod"){
     config = {
-        port: '8080'
+        port: '8080',
+        JWT_SECRET: "12366532312312",
     }
 }
 
