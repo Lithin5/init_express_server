@@ -17,5 +17,6 @@ model User {
   username  String   @unique
   salt      String
   password  String
+  role      String   @default("user")
   createdAt DateTime @default(now())
 }
