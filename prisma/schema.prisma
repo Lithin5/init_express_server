@@ -19,4 +19,13 @@ model User {
   password  String
   role      String   @default("user")
   createdAt DateTime @default(now())
+  Book      Book[]
+}
+
+model Book {
+  id     Int    @id @default(autoincrement())
+  name   String
+  author String
+  tookBy Int?
+  user   User?  @relation(fields: [tookBy], references: [id])
 }

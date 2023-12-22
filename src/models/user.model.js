@@ -30,8 +30,7 @@ const validateLogin = async ({ username, password }) => {
             const token = await jwt.sign({
                 userId: user.id,
                 expiresIn,                
-              }, config.JWT_SECRET, { expiresIn: expiresIn });
-              console.log(token);
+              }, config.JWT_SECRET, { expiresIn: expiresIn });              
             return { success: true, user: { ...user, password: undefined }, token };
         }else{
             return { success: false, err: 'Invalid credentials' };
